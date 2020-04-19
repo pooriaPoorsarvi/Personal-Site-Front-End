@@ -9,13 +9,25 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SignUpSectionComponent } from './sign-up-section/sign-up-section.component';
 
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { ContactSectionComponent } from './contact-section/contact-section.component';
+import { FooterComponent } from './footer/footer.component';
+import { AddressComponent } from './contact-section/address/address.component';
+import { EmailComponent } from './contact-section/email/email.component';
+import { PhoneComponent } from './contact-section/phone/phone.component';
+import { SitesComponent } from './contact-section/sites/sites.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    SignUpSectionComponent
+    SignUpSectionComponent,
+    ContactSectionComponent,
+    FooterComponent,
+    AddressComponent,
+    EmailComponent,
+    PhoneComponent,
+    SitesComponent
   ],
   imports: [
     BrowserModule,
