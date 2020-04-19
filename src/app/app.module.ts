@@ -8,6 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SignUpSectionComponent } from './sign-up-section/sign-up-section.component';
 
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SignUpSectionComponent } from './sign-up-section/sign-up-section.compon
     BrowserModule,
     PortfolioModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbCollapseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

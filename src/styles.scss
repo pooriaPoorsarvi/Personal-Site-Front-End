@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/master/LICENSE)
  */
 
- @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+//  @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
  #mainNav {
     min-height: 56px;
@@ -139,25 +139,25 @@
 
   .btn {
     box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
-    padding: 1.25rem 2rem;
-    font-family: 'Varela Round';
-    font-size: 80%;
-    text-transform: uppercase;
-    letter-spacing: .15rem;
-    border: 0;
+    padding: 1.25rem 2rem !important;
+    font-family: 'Varela Round' !important;
+    font-size: 80% !important;
+    text-transform: uppercase !important;
+    letter-spacing: .15rem !important;
+    border: 0 !important;
   }
 
   .btn-primary {
-    background-color: #64a19d;
+    background-color: #64a19d !important;
   }
 
   .btn-primary:hover {
-    background-color: #4f837f;
+    background-color: #4f837f !important;
   }
 
   .btn-primary:focus {
-    background-color: #4f837f;
-    color: rgb(216, 213, 213);
+    background-color: #4f837f !important;
+    color: rgb(216, 213, 213) !important  ;
   }
 
   .btn-primary:active {
