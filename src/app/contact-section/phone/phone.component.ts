@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-phone',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./phone.component.scss']
 })
 export class PhoneComponent implements OnInit {
+
+  @Input() phoneNumber: string;
 
   constructor() { }
 

@@ -1,3 +1,4 @@
+import { PersonalInfoService } from './services/personal-info.service';
 import { PortfolioModule } from './portfolio/portfolio.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -15,6 +16,7 @@ import { AddressComponent } from './contact-section/address/address.component';
 import { EmailComponent } from './contact-section/email/email.component';
 import { PhoneComponent } from './contact-section/phone/phone.component';
 import { SitesComponent } from './contact-section/sites/sites.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -34,9 +36,10 @@ import { SitesComponent } from './contact-section/sites/sites.component';
     PortfolioModule,
     AppRoutingModule,
     FontAwesomeModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [PersonalInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

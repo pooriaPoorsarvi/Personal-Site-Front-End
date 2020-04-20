@@ -1,3 +1,4 @@
+import { PersonalInfoService } from './../services/personal-info.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactSectionComponent implements OnInit {
 
-  constructor() { }
+  constructor(public personalInfoService: PersonalInfoService) { }
 
   ngOnInit(): void {
   }
