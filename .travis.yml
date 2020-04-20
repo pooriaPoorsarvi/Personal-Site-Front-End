@@ -10,10 +10,9 @@ addons:
   chrome: stable
 
 before_script:
-  - nvm install 11
   - nvm install 12
   - nvm alias default 12
-  - nvm use 11
+  - nvm use 12
   - npm install @angular/cli -g
 
 cache:
