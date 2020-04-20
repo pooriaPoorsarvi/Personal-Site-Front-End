@@ -10,7 +10,7 @@ export class PersonalInfo{
 export class PersonalInfoService{
   private personalLink = 'https://ec2-18-224-60-193.us-east-2.compute.amazonaws.com:443/phone-number';
   private subscription: Subscription;
-  private personalInfo: PersonalInfo = new PersonalInfo('+1 (416) 807 9017', 'Toronto, On', 'pooria.poorsarvi.tehrani@mail.utoronto.ca');
+  private personalInfo: PersonalInfo = new PersonalInfo('', '', '');
   constructor(private http: HttpClient){
     this.setPersonalInfo();
   }
