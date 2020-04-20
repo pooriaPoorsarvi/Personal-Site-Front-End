@@ -10,7 +10,14 @@ import { GeneralProjectComponent } from './projects/general-project/general-proj
 
 
 @NgModule({
-  declarations: [HeaderComponent, PortfolioComponent, AboutSectionComponent, ProjectsComponent, FeaturedProjectComponent, GeneralProjectComponent],
+  declarations: [
+    HeaderComponent,
+     PortfolioComponent,
+     AboutSectionComponent,
+     ProjectsComponent,
+     FeaturedProjectComponent,
+     GeneralProjectComponent
+    ],
   imports: [
     CommonModule
   ],
