@@ -8,7 +8,7 @@ export class PersonalInfo{
 
 @Injectable()
 export class PersonalInfoService{
-  private personalLink = 'https://ec2-18-224-60-193.us-east-2.compute.amazonaws.com:443/phone-number';
+  private personalLink = 'http://ec2-3-22-156-17.us-east-2.compute.amazonaws.com/phone-number';
   private subscription: Subscription;
   private personalInfo: PersonalInfo = new PersonalInfo('', '', '');
   constructor(private http: HttpClient){
