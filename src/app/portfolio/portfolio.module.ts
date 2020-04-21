@@ -6,6 +6,7 @@ import { AboutSectionComponent } from './about-section/about-section.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { FeaturedProjectComponent } from './projects/featured-project/featured-project.component';
 import { GeneralProjectComponent } from './projects/general-project/general-project.component';
+import { PortfolioRouterModule } from './portfolio-router.module';
 
 
 
@@ -19,7 +20,8 @@ import { GeneralProjectComponent } from './projects/general-project/general-proj
      GeneralProjectComponent
     ],
   imports: [
-    CommonModule
+    CommonModule,
+    PortfolioRouterModule
   ],
   exports:[PortfolioComponent]
 })

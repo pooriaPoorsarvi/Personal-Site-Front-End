@@ -1,3 +1,4 @@
+import { BlogModule } from './blog/blog.module';
 import { PersonalInfoService } from './services/personal-info.service';
 import { PortfolioModule } from './portfolio/portfolio.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,7 +19,6 @@ import { PhoneComponent } from './contact-section/phone/phone.component';
 import { SitesComponent } from './contact-section/sites/sites.component';
 import { HttpClientModule } from '@angular/common/http';
 
-import { MarkdownModule } from 'ngx-markdown';
 
 
 @NgModule({
@@ -35,12 +35,12 @@ import { MarkdownModule } from 'ngx-markdown';
   ],
   imports: [
     BrowserModule,
-    PortfolioModule,
     AppRoutingModule,
+    BlogModule,
+    PortfolioModule,
     FontAwesomeModule,
     NgbCollapseModule,
-    HttpClientModule,
-    MarkdownModule.forRoot(),
+    HttpClientModule
   ],
   providers: [PersonalInfoService],
   bootstrap: [AppComponent]

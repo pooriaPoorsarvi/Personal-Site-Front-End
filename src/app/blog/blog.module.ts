@@ -1,13 +1,17 @@
+import { DetailRouterModule } from './blog-router.module';
+import { BlogComponent } from './blog.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BlogComponent } from './blog/blog.component';
-
+import { BlogPostComponent } from './blog-post/blog-post.component';
+import { MarkdownModule } from 'ngx-markdown';
 
 
 @NgModule({
-  declarations: [BlogComponent],
+  declarations: [BlogComponent, BlogPostComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    DetailRouterModule,
+    MarkdownModule.forRoot()
   ]
 })
 export class BlogModule { }
