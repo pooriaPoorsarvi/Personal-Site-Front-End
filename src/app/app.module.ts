@@ -18,6 +18,8 @@ import { PhoneComponent } from './contact-section/phone/phone.component';
 import { SitesComponent } from './contact-section/sites/sites.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { MarkdownModule } from 'ngx-markdown';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
     FontAwesomeModule,
     NgbCollapseModule,
     HttpClientModule,
+    MarkdownModule.forRoot(),
   ],
   providers: [PersonalInfoService],
   bootstrap: [AppComponent]
