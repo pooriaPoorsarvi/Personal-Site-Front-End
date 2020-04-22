@@ -1,3 +1,4 @@
+import { BlogEntity, BlogService } from './../blog.servicce';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,11 +9,23 @@ import { Router } from '@angular/router';
 })
 export class BlogListComponent implements OnInit {
 
-  constructor(public router : Router) { }
+  blogEntity : BlogEntity = new BlogEntity();
+
+  constructor(public router : Router, private blogService: BlogService) {
+    blogService.getByID(2).subscribe(
+      value => {
+        this.blogEntity = value;
+
+      },
+      err => {
+        console.log('error in recieving the blog post');
+      }
+    );
+  }
 
   ngOnInit(): void {}
   navigateToPost(){
-    this.router.navigate(["blog", "blog-post"]);
+    this.router.navigate(['blog', 'blog-post']);
   }
 
 }
