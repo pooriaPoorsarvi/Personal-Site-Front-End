@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  {path : "", loadChildren:'./portfolio/portfolio.module#PortfolioModule'},
-  {path: "blog", loadChildren : "./blog/blog.module#BlogModule"},
+  {path: 'blog', loadChildren: () => import('./blog/blog.module').then(mod => mod.BlogModule)},
+  {path : "", loadChildren: () => import('./portfolio/portfolio.module').then(m => m.PortfolioModule)},
   {path : "**", redirectTo:''},
 ];
 

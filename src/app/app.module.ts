@@ -1,6 +1,4 @@
-import { BlogModule } from './blog/blog.module';
 import { PersonalInfoService } from './services/personal-info.service';
-import { PortfolioModule } from './portfolio/portfolio.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -36,8 +34,6 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BlogModule,
-    PortfolioModule,
     FontAwesomeModule,
     NgbCollapseModule,
     HttpClientModule
