@@ -21,7 +21,7 @@ cache:
     - node_modules
 
 script:
-  - ng build --prod --env=prod
+  - ng build --prod
 
 
 deploy:
