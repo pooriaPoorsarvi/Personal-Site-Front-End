@@ -21,7 +21,7 @@ cache:
     - node_modules
 
 script:
-  - ng build --prod --base-href "https://pooriapoorsarvi.github.io/Personal-Site-Front-End/"
+  - ng build --prod --base-href "Personal-Site-Front-End/"
 
 
 deploy:
