@@ -29,6 +29,6 @@ deploy:
     skip-cleanup: true
     github-token: $GITHUB_TOKEN
     keep-history: true
-    local-dir: ./dist/Personal-Site-Front-End/
+    local-dir: ./dist/
     on:
 
