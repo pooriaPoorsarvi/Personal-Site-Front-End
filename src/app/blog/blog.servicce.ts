@@ -22,6 +22,14 @@ export class BlogService{
     , {headers : h}) as Observable<BlogEntity>;
   }
 
+
+  getAll(): Observable<BlogEntity[]>{
+    const h = new HttpHeaders();
+    h.append('Access-Control-Allow-Origin', '*');
+    return this.httpClient.get('http://accessedportfolio-env.eba-4vsyc2gh.us-east-2.elasticbeanstalk.com/blog-posts'
+    , {headers : h}) as Observable<BlogEntity[]>;
+  }
+
 }
 
 

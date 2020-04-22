@@ -1,11 +1,5 @@
 <app-individual-blog-snippet
-(click) = "navigateToPost()"
-[image_src] = "blogEntity.imageSrc">
-<div [innerHTML]="blogEntity.intro"></div>
-</app-individual-blog-snippet>
-
-<app-individual-blog-snippet
-(click) = "navigateToPost()"
-[image_src] = "blogEntity.imageSrc">
+(click) = "navigateToPost(blogEntity.id)"
+[image_src] = "blogEntity.imageSrc" *ngFor="let blogEntity of blogEntities" >
 <div [innerHTML]="blogEntity.intro"></div>
 </app-individual-blog-snippet>
