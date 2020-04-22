@@ -21,18 +21,10 @@ cache:
     - node_modules
 
 script:
-  - ng build --prod
+  - ng build --prod --base-href "https://pooriapoorsarvi.github.io/Personal-Site-Front-End/"
 
 
 deploy:
-  - provider: s3
-    access_key_id: $ACCESS_KEY_ID_AWS
-    secret_access_key: $SECRET_ACCESS_KEY_AWS
-    bucket: "ppt.portfolio"
-    skip_cleanup: true
-    acl: public_read
-    local_dir: ./dist/Personal-Site-Front-End/
-    region: us-east-2
   - provider: pages
     skip-cleanup: true
     github-token: $GITHUB_TOKEN
