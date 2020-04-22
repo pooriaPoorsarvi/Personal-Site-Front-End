@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { interval, Subscription } from 'rxjs';
@@ -8,7 +9,6 @@ export class PersonalInfo{
 
 @Injectable()
 export class PersonalInfoService{
-  private personalLink = 'http://ec2-3-22-156-17.us-east-2.compute.amazonaws.com/phone-number';
   private subscription: Subscription;
   private personalInfo: PersonalInfo = new PersonalInfo('', '', '');
   constructor(private http: HttpClient){
@@ -24,7 +24,7 @@ export class PersonalInfoService{
         }
         const h = new HttpHeaders();
         h.append('Access-Control-Allow-Origin', '*');
-        this.http.get(this.personalLink, {headers : h}).subscribe(
+        this.http.get(environment.apiUrl + '/phone-number', {headers : h}).subscribe(
           newPersonalInfo => {
             if (!typeof(newPersonalInfo).isPrototypeOf(PersonalInfo)){
               console.log('recived data is not personal infor.');
