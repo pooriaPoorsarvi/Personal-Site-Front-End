@@ -1,4 +1,5 @@
 <!-- <markdown ngPreserveWhitespaces src="assets/test.md">
 </markdown> -->
-<markdown ngPreserveWhitespaces [src]="markDownSrc">
+<markdown  [src]="markDownSrc" (load)="onLoad($event)" (error)="onError($event)">
+
 </markdown>

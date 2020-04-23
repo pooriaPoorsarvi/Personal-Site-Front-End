@@ -14,4 +14,11 @@ export class MarkDownDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onLoad($event){
+    console.log(event);
+  }
+  onError($event){
+    console.log("Error in loading blog post");
+    console.log(event);
+  }
 }
