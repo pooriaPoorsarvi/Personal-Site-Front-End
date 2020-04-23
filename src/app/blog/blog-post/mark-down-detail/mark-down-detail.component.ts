@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MarkDownDetailComponent implements OnInit {
 
-  @Input() innerHTMLMarkdown: string;
+  @Input() markDownSrc: string;
 
   constructor() { }
 

@@ -1,5 +1,13 @@
+
+<section id="projects" class="projects-section bg-light">
+<div class="container">
+
 <app-individual-blog-snippet
 (click) = "navigateToPost(blogEntity.id)"
 [image_src] = "blogEntity.imageSrc" *ngFor="let blogEntity of blogEntities" >
 <div [innerHTML]="blogEntity.intro"></div>
 </app-individual-blog-snippet>
+
+</div>
+</section>
+

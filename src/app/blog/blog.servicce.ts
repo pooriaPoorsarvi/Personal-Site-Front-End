@@ -8,7 +8,7 @@ export class BlogEntity{
   public title: string;
   public intro: string;
   public imageSrc: string;
-  public markDown: string;
+  public markDownSrc: string;
 }
 
 @Injectable()
