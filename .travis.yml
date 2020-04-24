@@ -21,21 +21,12 @@ cache:
     - node_modules
 
 deploy:
-  - provider: s3
-    script : ng build --prod
-    access_key_id: $ACCESS_KEY_ID_AWS
-    secret_access_key: $SECRET_ACCESS_KEY_AWS
-    bucket: "ppt.portfolio"
-    skip_cleanup: true
-    acl: public_read
-    local_dir: ./dist/Personal-Site-Front-End/
-    region: us-east-2
-  - provider: lambda
-    script : npm run build:ssr
-    access_key_id: $ACCESS_KEY_ID_AWS
-    secret_access_key: $SECRET_ACCESS_KEY_AWS
-    function_name: PersonalPortfolio
-    region: us-east-2
-    role: arn:aws:iam::841421274623:role/service-role/PortfolioLambdaAdmin
-    runtime: "nodejs12.x"
-    handler_name: index.handler
+  provider: s3
+  script : ng build --prod
+  access_key_id: $ACCESS_KEY_ID_AWS
+  secret_access_key: $SECRET_ACCESS_KEY_AWS
+  bucket: "ppt.portfolio"
+  skip_cleanup: true
+  acl: public_read
+  local_dir: ./dist/Personal-Site-Front-End/
+  region: us-east-2
