@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { PLATFORM_ID, Inject } from '@angular/core';
+import { isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,20 +11,20 @@ import * as $ from 'jquery';
 export class NavBarComponent implements OnInit {
   public isCollapsed = true;
 
-  constructor() { }
+  isBrowser: boolean;
+
+  constructor(@Inject(PLATFORM_ID) platformId: string) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   ngOnInit(): void {
-    this.navbarCollapse();
-    $(window).scroll(this.navbarCollapse);
-    $('.js-scroll-trigger').click(function() {
-      (<any>$('.navbar-collapse')).collapse('hide');
-    });
-    // Activate scrollspy to add active class to navbar items on scroll
-    // (<any>$('body')).scrollspy({
-    //   target: '#mainNav',
-    //   offset: 100
-    // });
-
+    if(this.isBrowser){
+      this.navbarCollapse();
+      $(window).scroll(this.navbarCollapse);
+      $('.js-scroll-trigger').click(function() {
+        (<any>$('.navbar-collapse')).collapse('hide');
+      });
+    }
   }
 
   navbarCollapse(){
