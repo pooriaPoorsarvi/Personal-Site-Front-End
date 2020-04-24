@@ -32,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     SitesComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FontAwesomeModule,
     NgbCollapseModule,
