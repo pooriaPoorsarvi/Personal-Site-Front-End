@@ -21,7 +21,7 @@ cache:
     - node_modules
 
 script :
-  - ng build --prod
+  - ng build --prod --aot --output-path ./dist/static
   - npm run build:ssr
 
 deploy:
@@ -31,13 +31,14 @@ deploy:
     bucket: "ppt.portfolio"
     skip_cleanup: true
     acl: public_read
-    local_dir: ./dist/Personal-Site-Front-End/
+    local_dir: ./dist/static/
     region: us-east-2
   - provider: lambda
     access_key_id: $ACCESS_KEY_ID_AWS
     secret_access_key: $SECRET_ACCESS_KEY_AWS
-    function_name: PersonalPortfolio
+    function_name: PPTPortfolio
     region: us-east-2
-    role: arn:aws:iam::841421274623:role/service-role/PortfolioLambdaAdmin
+    role: arn:aws:iam::841421274623:role/service-role/PPTPortfolio-role-h3holrt0
     runtime: "nodejs12.x"
-    handler_name: index.handler
+    local_dir: ./dist/Personal-Site-Front-End/
+    handler_name: server/index.handler
