@@ -4,6 +4,8 @@ import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
 import { join } from 'path';
 
+import * as serverless from 'serverless-http';
+
 import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
@@ -21,7 +23,6 @@ export function app() {
 
   server.set('view engine', 'html');
   server.set('views', distFolder);
-
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
@@ -34,8 +35,26 @@ export function app() {
     res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
   });
 
+
   return server;
 }
+
+
+/*
+ *
+ * The following needs to be done in order to port this project to aws lambda :
+ * first make sure that all non js-css files are served using an external server such as s3
+ * second make sure that you serve the latest ziped version of the output to npm run build:ssr
+ * the handler will be dist/Personal-Site-Front-End/server/main.handler you can also use the handle as well
+ * lastly make sure that the backend is served on a ssl certified website because lambda is served on one.
+ *
+*/
+export const handle = serverless(app());
+export const handler = async (event, context) => {
+  const res = await handle({path : event.requestContext.http.path} as any, {} as any);
+  return res;
+};
+
 
 function run() {
   const port = process.env.PORT || 4000;
