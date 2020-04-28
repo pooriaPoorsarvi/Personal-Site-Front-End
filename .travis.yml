@@ -30,5 +30,5 @@ deploy:
   bucket: "ppt.portfolio"
   skip_cleanup: true
   acl: public_read
-  local_dir: ./dist/static/
+  local_dir: ./dist/
   region: us-east-2
