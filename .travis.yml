@@ -1,6 +1,6 @@
 language: node_js
 node_js:
- - "8.11"
+ - "12"
 sudo : true
 branches:
   only:
@@ -10,7 +10,6 @@ addons:
   chrome: stable
 
 before_script:
-  - nvm install 12
   - nvm alias default 12
   - nvm use 12
   - npm install @angular/cli -g
@@ -33,5 +32,6 @@ deploy:
   app: "PersonalPortfolioFrontEnd"
   env : "Personalportfoliofrontend-env"
   zip_file: "./output_file.zip"
+  bucket_name : "ebs-personal-portfolio-front"
   #  The clean up is skipped so that the jar file would not be removed
   skip_cleanup: true
