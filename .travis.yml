@@ -21,8 +21,9 @@ cache:
 
 script :
   - npm run build:ssr
-  - mv ./dist ./ebs-package/dist
-  - zip -r ./output_file.zip ./ebs-package/dist ./ebs-package/package.json
+  - rm ./package.json
+  - mv ./ebs-package/package.json ./package.json
+  - zip -r ./output_file.zip ./dist ./package.json
 
 deploy:
   provider: elasticbeanstalk
