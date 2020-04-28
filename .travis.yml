@@ -10,6 +10,7 @@ addons:
   chrome: stable
 
 before_script:
+  - apt install zip unzip
   - nvm install 12
   - nvm alias default 12
   - nvm use 12
@@ -21,14 +22,17 @@ cache:
     - node_modules
 
 script :
-  - ng build --prod --aot
+  - npm run build:ssr
+  - mv ./dist ./ebs-package/dist
+  - zip -r ./output_file.zip ./ebs-package/dist ./ebs-package/package.json
 
 deploy:
-  provider: s3
+  provider: elasticbeanstalk
   access_key_id: $ACCESS_KEY_ID_AWS
   secret_access_key: $SECRET_ACCESS_KEY_AWS
-  bucket: "ppt.portfolio"
+  region: "us-east-2"
+  app: "PersonalPortfolioFrontEnd"
+  env : "Personalportfoliofrontend-env"
+  zip_file: "./output_file.zip"
+  #  The clean up is skipped so that the jar file would not be removed
   skip_cleanup: true
-  acl: public_read
-  local_dir: ./dist/
-  region: us-east-2
