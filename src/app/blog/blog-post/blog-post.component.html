@@ -88,11 +88,11 @@
 			<!-- begin post -->
 			<div class="col-md-4">
 				<div class="card">
-					<a href="post.html">
+					<a [href]="'blog/blog-post/' + id">
 					<img class="img-fluid img-thumb" [src]="blogEntity.imageSrc" alt="">
 					</a>
 					<div class="card-block">
-						<h2 class="card-title"><a href="post.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h2>
+						<h2 class="card-title"><a [href]="'blog/blog-post/' + id">Other posts by Pooria Poorsarvi Tehrani.</a></h2>
 						<div class="metafooter">
 							<div class="wrapfooter">
 								<span class="meta-footer-thumb">
