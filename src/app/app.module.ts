@@ -1,3 +1,4 @@
+import { SignUpService } from './services/sign-up.service';
 import { PersonalInfoService } from './services/personal-info.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -38,7 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     NgbCollapseModule,
     HttpClientModule
   ],
-  providers: [PersonalInfoService],
+  providers: [PersonalInfoService, SignUpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
