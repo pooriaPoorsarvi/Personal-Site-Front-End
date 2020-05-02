@@ -12,7 +12,7 @@ export class SignUpSectionComponent implements OnInit {
   buttonActive = true;
   buttonOrginalText = 'Subscribe';
   buttonThanksText = 'Thank you';
-  buttonErrorText = 'An Error Happened';
+  buttonErrorText = 'User already exists';
   buttonNotValidText = 'Email Not Valid';
   buttonText = this.buttonOrginalText;
 
