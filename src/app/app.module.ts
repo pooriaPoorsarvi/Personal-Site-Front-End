@@ -17,6 +17,7 @@ import { EmailComponent } from './contact-section/email/email.component';
 import { PhoneComponent } from './contact-section/phone/phone.component';
 import { SitesComponent } from './contact-section/sites/sites.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -37,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FontAwesomeModule,
     NgbCollapseModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [PersonalInfoService, SignUpService],
