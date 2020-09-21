@@ -23,15 +23,15 @@ script :
   - npm run build:ssr
   - rm ./package.json
   - mv ./ebs-package/package.json ./package.json
-  - zip -r ./output_file.zip ./dist ./package.json
+  - zip -r ./output_file.zip ./dist ./package.json ./.ebextensions
 
 deploy:
   provider: elasticbeanstalk
   access_key_id: $ACCESS_KEY_ID_AWS
   secret_access_key: $SECRET_ACCESS_KEY_AWS
   region: "us-east-2"
-  app: "PersonalPortfolioFrontEnd"
-  env : "Personalportfoliofrontend-env"
+  app: "PortfolioFrontEndLoadBalanced"
+  env : "Portfoliofrontendloadbalanced-env"
   zip_file: "./output_file.zip"
   bucket_name : "ebs-personal-portfolio-front"
   #  The clean up is skipped so that the jar file would not be removed
