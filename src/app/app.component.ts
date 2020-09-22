@@ -15,6 +15,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit(){
     if (location.protocol !== 'https:' && ! location.host.startsWith('localhost')) {
+      alert('Redirecting you to https. Please wait :D.');
       location.replace(`https:${location.href.substring(location.protocol.length)}`);
     }
   }
