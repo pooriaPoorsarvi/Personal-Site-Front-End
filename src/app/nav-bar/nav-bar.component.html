@@ -13,10 +13,10 @@
           <a class="nav-link" [routerLink]="['/', 'blog']">Blog</a>
           </li>
           <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects And Background</a>
+          <a class="nav-link" (click)="goToProjects()" >Projects And Background</a>
           </li>
           <li class="nav-item">
-          <a class="nav-link" href="#signup">Contact</a>
+          <a class="nav-link" (click)="goToContacts()">Contact</a>
           </li>
       </ul>
       </div>

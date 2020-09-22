@@ -1,3 +1,4 @@
+import { NavScrolService } from './nav-scrol.service';
 import { SignUpService } from './services/sign-up.service';
 import { PersonalInfoService } from './services/personal-info.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -43,7 +44,7 @@ import { IonicModule } from '@ionic/angular';
     HttpClientModule,
     IonicModule.forRoot()
   ],
-  providers: [PersonalInfoService, SignUpService],
+  providers: [PersonalInfoService, SignUpService, NavScrolService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

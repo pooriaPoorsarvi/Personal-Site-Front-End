@@ -1,6 +1,7 @@
+import { NavScrolService } from './nav-scrol.service';
 import { ScrolService } from './scrol.service';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Location } from '@angular/common';
 
 @Component({
@@ -11,10 +12,11 @@ import { Location } from '@angular/common';
 export class AppComponent implements OnInit{
   title = 'Personal-Site-Front-End';
 
+
   constructor(
     private router: Router,
     private location: Location,
-    private scrolService: ScrolService
+    private scrolService: ScrolService,
   ){}
 
 
@@ -24,6 +26,8 @@ export class AppComponent implements OnInit{
       location.replace(`https:${location.href.substring(location.protocol.length)}`);
     }
   }
+
+
 
 
   onScroll(event){

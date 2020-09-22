@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { NavScrolService } from './../nav-scrol.service';
 import { ScrolService } from './../scrol.service';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as $ from 'jquery';
@@ -17,7 +19,9 @@ export class NavBarComponent implements OnInit {
 
   constructor(
     @Inject(PLATFORM_ID) platformId: string,
-    private scrolService: ScrolService
+    private scrolService: ScrolService,
+    private navScrolService: NavScrolService,
+    private router: Router
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
@@ -40,5 +44,18 @@ export class NavBarComponent implements OnInit {
       $("#mainNav").removeClass("navbar-shrink");
     }
   }
-
+  goToProjects(){
+    this.router.navigate(['/']).then(
+      _ => {
+        this.navScrolService.moveToProjects();
+      }
+    );
+  }
+  goToContacts(){
+    this.router.navigate(['/']).then(
+      _ => {
+        this.navScrolService.moveToContacts();
+      }
+    );
+  }
 }
