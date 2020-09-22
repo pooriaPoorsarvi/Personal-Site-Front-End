@@ -1,16 +1,18 @@
+<app-nav-bar></app-nav-bar>
+
 <ion-app>
-  <ion-content>
 
-    <app-nav-bar></app-nav-bar>
-
+  <ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
 
 
-    <router-outlet></router-outlet>
-    <!-- <app-portfolio></app-portfolio> -->
 
-    <app-sign-up-section></app-sign-up-section>
-    <app-contact-section></app-contact-section>
-    <app-footer></app-footer>
+
+  <router-outlet></router-outlet>
+  <!-- <app-portfolio></app-portfolio> -->
+
+  <app-sign-up-section></app-sign-up-section>
+  <app-contact-section></app-contact-section>
+  <app-footer></app-footer>
 
   </ion-content>
 </ion-app>

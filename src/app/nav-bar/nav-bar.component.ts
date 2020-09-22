@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ScrolService } from './../scrol.service';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as $ from 'jquery';
 import { PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformBrowser} from '@angular/common';
@@ -11,24 +12,29 @@ import { isPlatformBrowser} from '@angular/common';
 export class NavBarComponent implements OnInit {
   public isCollapsed = true;
 
+  @ViewChild('mainNav') mainNav: ElementRef<HTMLElement>;
   isBrowser: boolean;
 
-  constructor(@Inject(PLATFORM_ID) platformId: string) {
+  constructor(
+    @Inject(PLATFORM_ID) platformId: string,
+    private scrolService: ScrolService
+  ) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
   ngOnInit(): void {
     if(this.isBrowser){
-      this.navbarCollapse();
-      $(window).scroll(this.navbarCollapse);
+      this.scrolService.heightChange.subscribe(
+        move => this.navbarCollapse(move)
+      );
       $('.js-scroll-trigger').click(function() {
         (<any>$('.navbar-collapse')).collapse('hide');
       });
     }
   }
 
-  navbarCollapse(){
-    if ($("#mainNav").offset().top > 100) {
+  navbarCollapse(move: number){
+    if (move > 100) {
       $("#mainNav").addClass("navbar-shrink");
     } else {
       $("#mainNav").removeClass("navbar-shrink");

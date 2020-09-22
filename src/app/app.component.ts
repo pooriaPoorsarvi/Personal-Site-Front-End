@@ -1,3 +1,4 @@
+import { ScrolService } from './scrol.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
@@ -10,7 +11,11 @@ import { Location } from '@angular/common';
 export class AppComponent implements OnInit{
   title = 'Personal-Site-Front-End';
 
-  constructor(private router: Router, private location: Location){}
+  constructor(
+    private router: Router,
+    private location: Location,
+    private scrolService: ScrolService
+  ){}
 
 
   ngOnInit(){
@@ -18,6 +23,11 @@ export class AppComponent implements OnInit{
       alert('Redirecting you to https. Please wait :D.');
       location.replace(`https:${location.href.substring(location.protocol.length)}`);
     }
+  }
+
+
+  onScroll(event){
+    this.scrolService.move(event);
   }
 
 
