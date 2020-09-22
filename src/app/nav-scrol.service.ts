@@ -8,6 +8,8 @@ export class NavScrolService{
   private projects: ElementRef = null;
   private contacts: ElementRef = null;
   projSub = new Subject<ElementRef>();
+  private started: ElementRef = null;
+  startedSub = new Subject<ElementRef>();
   addProjects(projects: ElementRef){
     this.projects = projects;
     this.projSub.next(this.projects);
@@ -30,10 +32,31 @@ export class NavScrolService{
     );
   }
 
+  addStarted(started: ElementRef){
+    this.started = started;
+    this.startedSub.next(this.started);
+  }
+  // TODO make this process stream lined and move the router move to hear as well
+  moveToStarted(){
+    if (this.started !== null){
+      this.moveStarted();
+    }else{
+      this.startedSub.subscribe(
+        _ => {
+          this.moveStarted();
+        }
+      );
+    }
+  }
+  private moveStarted(){
+    this.started.nativeElement.scrollIntoView(
+      {behavior: "smooth", block: "start", inline: "nearest"}
+    );
+  }
+
+
   addContacts(contacts: ElementRef){
     this.contacts = contacts;
-    console.log('setging contacts');
-    console.log(this.contacts);
   }
   moveToContacts(){
     this.contacts.nativeElement.scrollIntoView(

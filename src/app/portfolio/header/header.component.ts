@@ -1,3 +1,5 @@
+import { NavScrolService } from './../../nav-scrol.service';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private navScrolService: NavScrolService) { }
 
   ngOnInit(): void {
+  }
+
+  getStarted(){
+    this.router.navigate(['/']).then(
+      _ => {
+        this.navScrolService.moveToStarted();
+      }
+    );
   }
 
 }
