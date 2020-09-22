@@ -18,6 +18,7 @@ import { PhoneComponent } from './contact-section/phone/phone.component';
 import { SitesComponent } from './contact-section/sites/sites.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
 
 
 
@@ -39,7 +40,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FontAwesomeModule,
     NgbCollapseModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    IonicModule.forRoot()
   ],
   providers: [PersonalInfoService, SignUpService],
   bootstrap: [AppComponent]
