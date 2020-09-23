@@ -1,6 +1,8 @@
+import { NavMapService } from './../../nav-map.service';
 import { NavScrolService } from './../../nav-scrol.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { AboutSectionComponent } from '../about-section/about-section.component';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router, private navScrolService: NavScrolService) { }
+  constructor(private router: Router, private navMapService: NavMapService) { }
 
   ngOnInit(): void {
   }
@@ -17,7 +19,7 @@ export class HeaderComponent implements OnInit {
   getStarted(){
     this.router.navigate(['/']).then(
       _ => {
-        this.navScrolService.moveToStarted();
+        this.navMapService.goToMapping(AboutSectionComponent.name);
       }
     );
   }

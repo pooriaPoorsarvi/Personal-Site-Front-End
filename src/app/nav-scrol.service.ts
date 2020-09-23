@@ -3,6 +3,8 @@ import { ElementRef, Injectable } from '@angular/core';
 
 
 
+// TODO remove this service
+// DEPRECATED
 @Injectable()
 export class NavScrolService{
   private projects: ElementRef = null;

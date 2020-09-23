@@ -1,3 +1,4 @@
+import { NavMapService } from './../nav-map.service';
 import { Router } from '@angular/router';
 import { NavScrolService } from './../nav-scrol.service';
 import { ScrolService } from './../scrol.service';
@@ -5,6 +6,10 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as $ from 'jquery';
 import { PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformBrowser} from '@angular/common';
+import { ContactSectionComponent } from '../contact-section/contact-section.component';
+import { ProjectsComponent } from '../portfolio/projects/projects.component';
+import { BlogComponent } from '../blog/blog.component';
+import { BlogListComponent } from '../blog/blog-list/blog-list.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -21,6 +26,7 @@ export class NavBarComponent implements OnInit {
     @Inject(PLATFORM_ID) platformId: string,
     private scrolService: ScrolService,
     private navScrolService: NavScrolService,
+    private navMapService: NavMapService,
     private router: Router
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
@@ -47,14 +53,23 @@ export class NavBarComponent implements OnInit {
   goToProjects(){
     this.router.navigate(['/']).then(
       _ => {
-        this.navScrolService.moveToProjects();
+        this.navMapService.goToMapping(ProjectsComponent.name);
       }
     );
   }
   goToContacts(){
     this.router.navigate(['/']).then(
       _ => {
-        this.navScrolService.moveToContacts();
+        this.navMapService.goToMapping(ContactSectionComponent.name);
+        // this.navScrolService.moveToContacts();
+      }
+    );
+  }
+
+  gotoBlog(){
+    this.router.navigate(['/', 'blog']).then(
+      _ => {
+        this.navMapService.goToMapping(BlogListComponent.name);
       }
     );
   }
