@@ -1,3 +1,4 @@
+import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
@@ -7,6 +8,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { FeaturedProjectComponent } from './projects/featured-project/featured-project.component';
 import { GeneralProjectComponent } from './projects/general-project/general-project.component';
 import { PortfolioRouterModule } from './portfolio-router.module';
+import { SamplesComponent } from './projects/samples/samples.component';
 
 
 
@@ -17,11 +19,13 @@ import { PortfolioRouterModule } from './portfolio-router.module';
      AboutSectionComponent,
      ProjectsComponent,
      FeaturedProjectComponent,
-     GeneralProjectComponent
+     GeneralProjectComponent,
+     SamplesComponent
     ],
   imports: [
     CommonModule,
-    PortfolioRouterModule
+    PortfolioRouterModule,
+    IonicModule
   ],
   exports:[PortfolioComponent]
 })
