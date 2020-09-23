@@ -1,5 +1,8 @@
-import { Subject } from 'rxjs';
+import { element } from 'protractor';
+import { ScrolService } from './scrol.service';
+import { Subject, interval } from 'rxjs';
 import { ElementRef, Injectable } from '@angular/core';
+import * as $ from 'jquery';
 
 
 @Injectable({providedIn: 'root'})
@@ -9,7 +12,7 @@ export class NavMapService{
   private dictOfSubjects = {};
   private servicesSubjects = new Subject<string>();
 
-  constructor() {}
+  constructor(private scrolService: ScrolService) {}
 
   exists(dict: {}, name: string){
     return typeof(dict[name]) !== 'undefined';
@@ -51,7 +54,8 @@ export class NavMapService{
     }
   }
 
-  private moveToWhenReady(element: ElementRef){
+  private moveToWhenReady(element: ElementRef<HTMLElement>){
+    console.log(element);
     element.nativeElement.scrollIntoView(
       {behavior: "smooth", block: "start", inline: "start"}
     );

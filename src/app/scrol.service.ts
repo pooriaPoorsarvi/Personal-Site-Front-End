@@ -8,7 +8,10 @@ export class ScrolService{
   // TODO make this private
   public get heightChange(): Observable<number> { return this.scrolSubject.asObservable(); }
 
+  public get deltaY(): Observable<number> { return this.deltaYSubject.asObservable(); }
+
   private scrolSubject: Subject<number> = new Subject<number>();
+  private deltaYSubject: Subject<number> = new Subject<number>();
   private initHeight: number = null;
 
   move(event){
@@ -16,5 +19,7 @@ export class ScrolService{
       this.initHeight = event.detail.startY;
     }
     this.scrolSubject.next(event.detail.currentY - this.initHeight);
+    this.deltaYSubject.next(event.detail.deltaY);
   }
+
 }
