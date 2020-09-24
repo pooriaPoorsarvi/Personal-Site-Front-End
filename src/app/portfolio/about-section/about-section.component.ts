@@ -8,6 +8,7 @@ import { AfterViewInit, Component, OnInit, ViewChild, ElementRef, OnDestroy } fr
   styleUrls: ['./about-section.component.scss']
 })
 export class AboutSectionComponent implements OnInit, AfterViewInit, OnDestroy{
+  public static get mapping() {return 'AboutSectionComponent'; }
 
 
   @ViewChild('started') started: ElementRef;
@@ -18,11 +19,11 @@ export class AboutSectionComponent implements OnInit, AfterViewInit, OnDestroy{
   }
 
   ngAfterViewInit(){
-    this.navMapService.addToMapping(AboutSectionComponent.name, this.started);
+    this.navMapService.addToMapping(AboutSectionComponent.mapping, this.started);
   }
 
   ngOnDestroy(){
-    this.navMapService.deletMapping(AboutSectionComponent.name);
+    this.navMapService.deletMapping(AboutSectionComponent.mapping);
   }
 
 }

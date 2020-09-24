@@ -10,6 +10,7 @@ import { AfterViewInit, Component, OnInit, ViewChild, ElementRef, OnDestroy } fr
 })
 export class ContactSectionComponent implements OnInit, AfterViewInit, OnDestroy {
 
+  public static get mapping() {return 'ContactSectionComponent'; }
   @ViewChild('contacts') contacts: ElementRef;
 
   constructor(
@@ -24,11 +25,11 @@ export class ContactSectionComponent implements OnInit, AfterViewInit, OnDestroy
 
   ngAfterViewInit(){
     this.navScrolService.addContacts(this.contacts);
-    this.navMapService.addToMapping(ContactSectionComponent.name, this.contacts);
+    this.navMapService.addToMapping(ContactSectionComponent.mapping, this.contacts);
   }
 
   ngOnDestroy(){
-    this.navMapService.deletMapping(ContactSectionComponent.name);
+    this.navMapService.deletMapping(ContactSectionComponent.mapping);
   }
 
 }

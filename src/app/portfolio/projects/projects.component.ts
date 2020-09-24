@@ -8,6 +8,7 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } fr
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy{
+  public static get mapping() {return 'ProjectsComponent'; }
 
   @ViewChild('projects') projects: ElementRef;
 
@@ -16,11 +17,11 @@ export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy{
   ngOnInit(): void {
   }
   ngAfterViewInit() {
-    this.navMapService.addToMapping(ProjectsComponent.name, this.projects);
+    this.navMapService.addToMapping(ProjectsComponent.mapping, this.projects);
   }
 
   ngOnDestroy() {
-    this.navMapService.deletMapping(ProjectsComponent.name);
+    this.navMapService.deletMapping(ProjectsComponent.mapping);
   }
 
 }

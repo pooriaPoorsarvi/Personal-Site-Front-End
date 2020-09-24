@@ -33,12 +33,12 @@ export class NavMapService{
 
   goToMapping(serviceName: string){
     if (this.exists(this.dictOfElements, serviceName)) {
-      this.moveToWhenReady(this.dictOfElements[serviceName]);
+      this.moveToWhenReady(this.dictOfElements[serviceName], serviceName);
     }else{
       if (this.exists(this.dictOfSubjects, serviceName)){
         this.dictOfSubjects[serviceName].subscribe(
           _ => {
-            this.moveToWhenReady(this.dictOfElements[serviceName]);
+            this.moveToWhenReady(this.dictOfElements[serviceName], serviceName);
           }
         );
       }else{
@@ -46,7 +46,7 @@ export class NavMapService{
           serviceNameNew => {
             // The second part of the exist is because this is multi threaded
             if (serviceNameNew === serviceName || this.exists(this.dictOfSubjects, serviceName)) {
-              this.moveToWhenReady(this.dictOfElements[serviceName]);
+              this.moveToWhenReady(this.dictOfElements[serviceName], serviceName);
             }
           }
         );
@@ -54,8 +54,7 @@ export class NavMapService{
     }
   }
 
-  private moveToWhenReady(element: ElementRef<HTMLElement>){
-    console.log(element);
+  private moveToWhenReady(element: ElementRef, serviceName: string){
     element.nativeElement.scrollIntoView(
       {behavior: "smooth", block: "start", inline: "start"}
     );

@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   getStarted(){
     this.router.navigate(['/']).then(
       _ => {
-        this.navMapService.goToMapping(AboutSectionComponent.name);
+        this.navMapService.goToMapping(AboutSectionComponent.mapping);
       }
     );
   }

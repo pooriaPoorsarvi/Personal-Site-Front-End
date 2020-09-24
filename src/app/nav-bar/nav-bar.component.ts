@@ -53,14 +53,14 @@ export class NavBarComponent implements OnInit {
   goToProjects(){
     this.router.navigate(['/']).then(
       _ => {
-        this.navMapService.goToMapping(ProjectsComponent.name);
+        this.navMapService.goToMapping(ProjectsComponent.mapping);
       }
     );
   }
   goToContacts(){
     this.router.navigate(['/']).then(
       _ => {
-        this.navMapService.goToMapping(ContactSectionComponent.name);
+        this.navMapService.goToMapping(ContactSectionComponent.mapping);
         // this.navScrolService.moveToContacts();
       }
     );
@@ -69,7 +69,7 @@ export class NavBarComponent implements OnInit {
   gotoBlog(){
     this.router.navigate(['/', 'blog']).then(
       _ => {
-        this.navMapService.goToMapping(BlogListComponent.name);
+        this.navMapService.goToMapping(BlogListComponent.mapping);
       }
     );
   }

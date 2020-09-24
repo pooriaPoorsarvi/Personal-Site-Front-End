@@ -10,6 +10,7 @@ import { LoadingController } from '@ionic/angular';
   styleUrls: ['./blog-list.component.scss']
 })
 export class BlogListComponent implements OnInit, AfterViewInit, OnDestroy  {
+  public static get mapping() {return 'BlogListComponent'; }
 
   @ViewChild('blog') blog: ElementRef;
 
@@ -58,11 +59,11 @@ export class BlogListComponent implements OnInit, AfterViewInit, OnDestroy  {
   }
 
   ngAfterViewInit(){
-    this.navMapService.addToMapping(BlogListComponent.name, this.blog);
+    this.navMapService.addToMapping(BlogListComponent.mapping, this.blog);
   }
 
   ngOnDestroy(){
-    this.navMapService.deletMapping(BlogListComponent.name);
+    this.navMapService.deletMapping(BlogListComponent.mapping);
   }
 
 }
