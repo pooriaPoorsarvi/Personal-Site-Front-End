@@ -58,12 +58,12 @@ export class NavBarComponent implements OnInit {
     );
   }
   goToContacts(){
-    this.router.navigate(['/']).then(
-      _ => {
-        this.navMapService.goToMapping(ContactSectionComponent.mapping);
-        // this.navScrolService.moveToContacts();
-      }
-    );
+    this.navMapService.goToMapping(ContactSectionComponent.mapping);
+    // this.router.navigate(['/']).then(
+    //   _ => {
+    //     // this.navScrolService.moveToContacts();
+    //   }
+    // );
   }
 
   gotoBlog(){
