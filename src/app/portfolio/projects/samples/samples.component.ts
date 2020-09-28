@@ -1,3 +1,5 @@
+import { Subject } from 'rxjs';
+import { SamplesService, SampleInterface } from './samples.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SamplesComponent implements OnInit {
 
-  constructor() { }
+  samples: SampleInterface[] = [];
+
+  constructor(private samplesService: SamplesService) { }
 
   ngOnInit(): void {
+    this.samples = this.samplesService.samples;
+    this.samplesService.samplesStream.subscribe(
+      samples => {
+        this.samples = samples;
+      }
+    );
   }
 
 }

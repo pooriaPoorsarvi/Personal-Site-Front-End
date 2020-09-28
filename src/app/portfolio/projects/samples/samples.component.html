@@ -2,66 +2,20 @@
 <!-- TODO find why ion-img messes up scrollintoview -->
 <ion-grid class="ion-no-padding ion-no-margin">
   <ion-row class="ion-no-padding ion-no-margin">
-    <ion-col size=12 class="ion-no-padding ion-no-margin">
+    <ion-col size=12 class="ion-no-padding ion-no-margin" *ngFor = 'let sample of samples'>
       <ion-card class="ion-no-margin ion-margin-bottom ion-text-center">
         <ion-card-header color='secondary'>
-          Personal Website
+          {{sample.title}}
         </ion-card-header>
-        <img src='assets/Portfolio.png' class="img-fluid">
+        <img [src]='sample.imageSrc' class="img-fluid">
         <ion-card-content class="ion-margin-top">
           <div>
             <ion-text>
-              Made personal website using AWS, Angular, Ionic, Java Spring boot.
+              {{sample.description}}
             </ion-text>
           </div>
           <div class="ion-margin-top">
-            <a href="/">
-              <ion-button color='primary'>
-                Go to project
-              </ion-button>
-            </a>
-          </div>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-
-    <ion-col size=12 class="ion-no-padding ion-no-margin">
-      <ion-card class="ion-no-margin ion-margin-bottom ion-text-center">
-        <ion-card-header color='secondary'>
-          Ecommerce Website and APP
-        </ion-card-header>
-        <img src='assets/Commerce.png' class="img-fluid">
-        <ion-card-content class="ion-margin-top">
-          <div>
-            <ion-text>
-              Made ecommerce website using AWS, Angular, Ionic, Java Spring boot.
-            </ion-text>
-          </div>
-          <div class="ion-margin-top">
-            <a href="http://commerce-front-end-travis.s3-website.us-east-2.amazonaws.com/main/tabs/discover">
-              <ion-button color='primary'>
-                Go to project
-              </ion-button>
-            </a>
-          </div>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-
-    <ion-col size=12 class="ion-no-padding ion-no-margin">
-      <ion-card class="ion-no-margin ion-margin-bottom ion-text-center">
-        <ion-card-header color='secondary'>
-          Paper collection website
-        </ion-card-header>
-        <img src='assets/T2S.png' class="img-fluid">
-        <ion-card-content class="ion-margin-top">
-          <div>
-            <ion-text>
-              Made a sample of how to show a collection of papers using AWS, Angular, Ionic.
-            </ion-text>
-          </div>
-          <div class="ion-margin-top">
-            <a href="http://ppt-t2s.s3-website.us-east-2.amazonaws.com/home/tabs/examples">
+            <a [href]="sample.urlLink">
               <ion-button color='primary'>
                 Go to project
               </ion-button>
