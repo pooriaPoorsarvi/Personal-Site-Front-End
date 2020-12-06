@@ -16,7 +16,7 @@ export class AppsListComponent implements OnInit {
   }
 
   navigateToApp(){
-    this.router.navigate(['/', 'apps', 'apps-posting', '1'])
+    this.router.navigate(['/', 'apps', 'apps-posting', 'Tyke-Blutooth-Monitor'])
   }
 
 }

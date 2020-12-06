@@ -73,4 +73,8 @@ export class NavBarComponent implements OnInit {
       }
     );
   }
+
+  goToApps(){
+    this.router.navigate(["/", "apps"]);
+  }
 }
