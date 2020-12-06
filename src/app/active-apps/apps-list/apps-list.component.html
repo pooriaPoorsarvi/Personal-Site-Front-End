@@ -1,0 +1,20 @@
+
+<section id="projects" class="projects-section bg-light">
+  <div class="container" #blog>
+
+    <!--
+
+  [image_src] = "blogEntity.imageSrc" *ngFor="let blogEntity of blogEntities" -->
+  <app-individual-app-listing
+  [imageSrc] = "'assets/splash.png'"
+  (click) = "navigateToApp()">
+    <div class="featured-text text-center text-lg-left">
+      <h4>Tyke Bluetooth Monitor</h4>
+      <p class="text-black-50 mb-0">A smart guardian app that uses bluetooth to notify you to pickup your kid.</p>
+    </div>'
+    <!-- <div [innerHTML]="blogEntity.intro"></div> -->
+  </app-individual-app-listing>
+
+  </div>
+</section>
+
