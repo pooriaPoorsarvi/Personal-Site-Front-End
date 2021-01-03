@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class EmailComponent implements OnInit {
 
-  @Input() emailAddress: string;
+  emailAddress: string = "pooria.poorsarvi.tehrani@mail.utoronto.ca";
 
   constructor() { }
 

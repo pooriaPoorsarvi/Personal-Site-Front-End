@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PhoneComponent implements OnInit {
 
-  @Input() phoneNumber: string;
+  phoneNumber: string;
 
   constructor() { }
 
