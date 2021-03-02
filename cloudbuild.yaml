@@ -1,3 +1,9 @@
 steps:
+  - name: 'gcr.io/cloud-builders/npm'
+    args: [ 'install' ]
+
+  - name: 'gcr.io/cloud-builders/npm'
+    args: [ 'run', 'build', '--prod' ]
+    
   - name: 'gcr.io/ppt-personal-project/firebase'
     args: [ "deploy"]
