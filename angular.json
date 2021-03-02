@@ -237,5 +237,8 @@
       }
     }
   },
-  "defaultProject": "Personal-Site-Front-End"
+  "defaultProject": "Personal-Site-Front-End",
+  "cli": {
+    "analytics": "8d454916-ff0b-48a3-b267-5a8046575814"
+  }
 }

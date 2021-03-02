@@ -1,0 +1,3 @@
+steps:
+  - name: 'gcr.io/ppt-personal-project/firebase'
+    args: [ "deploy"]
