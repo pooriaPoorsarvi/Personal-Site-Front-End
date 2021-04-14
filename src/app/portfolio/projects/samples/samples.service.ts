@@ -14,12 +14,12 @@ export class SamplesService{
 
   private _samples: SampleInterface[] = [
 
-    {
-      title: 'Ecommerce Website and APP',
-      description: 'Made ecommerce website using AWS, Angular, Ionic, Java Spring boot.',
-      imageSrc: 'assets/Commerce.png',
-      urlLink: 'http://commerce-front-end-travis.s3-website.us-east-2.amazonaws.com/main/tabs/discover'
-    },
+    // {
+    //   title: 'Ecommerce Website and APP',
+    //   description: 'Made ecommerce website using AWS, Angular, Ionic, Java Spring boot.',
+    //   imageSrc: 'assets/Commerce.png',
+    //   urlLink: 'http://commerce-front-end-travis.s3-website.us-east-2.amazonaws.com/main/tabs/discover'
+    // },
 
     {
       title: 'Personal Website',
